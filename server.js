@@ -25,7 +25,6 @@ function proxyGitHub(request, response) {
     headers: {Authorization: `token ${process.env.GITHUB_TOKEN}`}
   }))(request, response);
 }
-
 // REVIEW: This is a new route that will utilize our middle man proxy.
 app.get('/github/*', proxyGitHub);
 
